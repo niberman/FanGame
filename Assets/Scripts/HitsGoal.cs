@@ -6,6 +6,10 @@ public class HitsGoal : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       Destroy(this.CompareTag("Player")
+        if (collision.gameObject.tag == "Player")
+        {
+            DestroyObject(collision.gameObject);
+        }
+        //Destroy(GameObject.FindWithTag("Player"));
     }
 }
