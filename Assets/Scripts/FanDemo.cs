@@ -2,18 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FanDemo : MonoBehaviour
 {
-    float fanStrength = 10.0f;
 
+    public float fanStrength = 10.0f;
+    public GameObject hat;
+    public GameObject fan;
+
+    public void Start()
+    {
+        public Vector2 playerPosition = hat.transform.position;
+        public Vector2 fanPosition = fan.transform.position;
+        public Vector2 fanPush = playerPosition - fanPosition;
+    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb == null)
             return;
-        rb.AddForce(-transform.right * fanStrength, ForceMode2D.Impulse);
+        rb.AddForce(transform.fanPush * fanStrength, ForceMode2D.Impulse);
     }
-
     
 }

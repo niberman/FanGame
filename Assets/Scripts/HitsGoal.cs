@@ -10,6 +10,5 @@ public class HitsGoal : MonoBehaviour
         {
             DestroyObject(collision.gameObject);
         }
-        //Destroy(GameObject.FindWithTag("Player"));
     }
 }
