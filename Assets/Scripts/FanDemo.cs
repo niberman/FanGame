@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FanDemo : MonoBehaviour { 
-
+public class FanDemo : MonoBehaviour
+{ 
+    
     public float fanStrength = 10.0f;
     public GameObject hat;
     public GameObject fan;
+
 
     public void Start()
     {
