@@ -10,22 +10,26 @@ public class FanPush : MonoBehaviour
     public GameObject hat;
     public GameObject fan;
 
+   
+    Vector3 playerPosition;
+    Vector3 fanPosition;
+    Vector3 pushVector;
 
-    public void Start()
+    private void Start()
     {
-         Vector2 playerPosition = hat.transform.position;
-         Vector2 fanPosition = fan.transform.position;
-         Vector2 pushVector = playerPosition - fanPosition;  
+        playerPosition = hat.transform.position;
+        fanPosition = fan.transform.position;
+        pushVector = playerPosition - fanPosition;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        gameObject.transform.position += pushVector * Time.deltaTime * fanStrength;
+        //other.transform.position += pushVector * Time.deltaTime * fanStrength;
 
-        //Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-        //if (rb == null)
-        //    return;
-        //rb.AddForce(pushVector * fanStrength, ForceMode2D.Impulse);
+        Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+        if (rb == null)
+            return;
+        rb.AddForce(pushVector * fanStrength, ForceMode2D.Impulse);
     }
 }
 
