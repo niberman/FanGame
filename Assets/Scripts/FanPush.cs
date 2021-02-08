@@ -7,8 +7,8 @@ public class FanPush : MonoBehaviour
 {
 
     public float fanStrength = 10.0f;
-    public GameObject hat;
-    public GameObject fan;
+    private GameObject hat;
+    private GameObject fan;
 
    
     Vector3 playerPosition;
@@ -17,14 +17,21 @@ public class FanPush : MonoBehaviour
 
     private void Start()
     {
+        hat = GameObject.FindWithTag("Player");
+        fan = this.gameObject;
+
+
         playerPosition = hat.transform.position;
         fanPosition = fan.transform.position;
         pushVector = playerPosition - fanPosition;
     }
 
+    private void Update()
+    {
+        
+    }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //other.transform.position += pushVector * Time.deltaTime * fanStrength;
 
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb == null)
