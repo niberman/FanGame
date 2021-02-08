@@ -8,7 +8,7 @@ public class HitsGoal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            DestroyObject(collision.gameObject);
+            Object.Destroy(collision.gameObject);
         }
     }
 }
