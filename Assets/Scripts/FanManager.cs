@@ -18,13 +18,13 @@ public class FanManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
             Instantiate(fanDown);
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-            Instantiate(fanUp);
         else if (Input.GetKeyDown(KeyCode.Alpha2))
-            Instantiate(fanRight);
+            Instantiate(fanUp);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
+            Instantiate(fanRight);
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
             Instantiate(fanLeft);
         else
             return;
