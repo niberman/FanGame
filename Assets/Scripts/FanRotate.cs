@@ -5,7 +5,7 @@ using UnityEngine;
 public class FanRotate : MonoBehaviour
 {
     GameObject rotatingFan;
-    public float speed 10.0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +16,12 @@ public class FanRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.A))
-            transform.Rotate(Vector3.up * speed * Time.deltaTime);
+            transform.Rotate(Vector3.forward * 200 * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.D))
-            transform.Rotate(-Vector3.up * speed * Time.deltaTime);
+            transform.Rotate(Vector3.back * 200 * Time.deltaTime);
 
     }
 }

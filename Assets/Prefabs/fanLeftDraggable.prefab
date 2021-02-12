@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 3741641964867011458}
   - component: {fileID: 4375035341931080923}
   - component: {fileID: 9218985540614171950}
+  - component: {fileID: -2652605627740633981}
   m_Layer: 0
   m_Name: fanLeftDraggable
   m_TagString: Untagged
@@ -273,3 +274,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fanStrength: 1
+--- !u!114 &-2652605627740633981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754264305039120879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9f9c937a11146b2822e1a65ce8b01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
