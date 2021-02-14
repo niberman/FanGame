@@ -480,7 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fanLeft: {fileID: 7754264305039120879, guid: 56849795478314b2cb7317c991ed4ca4, type: 3}
   fanUp: {fileID: 6010060826374010048, guid: 67d2c78599e40487dbf1453e28ef4c70, type: 3}
-  fanDown: {fileID: 7546550408192330649, guid: c2536ab8a5e5143b9b96cd39beeaf08c, type: 3}
+  fanDown: {fileID: 7754264305039120879, guid: 96b1d90aca2d0db46b0d3067701b774f, type: 3}
   fanRight: {fileID: 8352594829517119783, guid: da744ce0795194f87a9e78cf3cc52c90, type: 3}
 --- !u!4 &1856815327
 Transform:
