@@ -6,7 +6,7 @@ using UnityEngine;
 public class FanPush : MonoBehaviour
 {
 
-    public float fanStrength = 10.0f;
+    [SerializeField] float fanStrength = 10.0f;
     private GameObject hat;
     private GameObject fan;
 
