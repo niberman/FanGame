@@ -17,10 +17,10 @@ public class FanRotate : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Z))
             transform.Rotate(Vector3.forward * 200 * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.C))
             transform.Rotate(Vector3.back * 200 * Time.deltaTime);
 
     }

@@ -1,27 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Sirenix.OdinInspector;
 
 public class GameManager : MonoBehaviour
 {
 
-    bool editMode;
-    //BoxCollider2D boxColl;
-    public GameObject fanDown;
+    
+    
+    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        editMode = true; 
-    }
+    private GameMode gameMode = GameMode.editMode;
+    public static event Action<GameMode> toggleGameMode;
+    //action creates a delegate, and an instance of a delegate
+    //a delegate is a variable that you can assign a function to
 
-    // Update is called once per frame
-    void Update()
+
+ 
+  
+
+    [Button]
+    private void ToggleGameMode()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            fanDown.GetComponent<BoxCollider2D>().enabled = false;
-            Debug.Log("boxColl should be turned off");
-        }
+        if (toggleGameMode != null)
+            toggleGameMode.Invoke(gameMode);
     }
+}
+
+public enum GameMode
+{
+    editMode,
+    playMode
 }
