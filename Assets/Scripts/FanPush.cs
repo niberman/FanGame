@@ -26,10 +26,6 @@ public class FanPush : MonoBehaviour
         pushVector = playerPosition - fanPosition;
     }
 
-    private void Update()
-    {
-        
-    }
     public void OnTriggerEnter2D(Collider2D other)
     {
 
