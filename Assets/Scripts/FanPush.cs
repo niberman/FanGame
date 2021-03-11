@@ -11,7 +11,7 @@ public class FanPush : MonoBehaviour
     private GameObject fan;
 
    
-    Vector3 playerPosition;
+   // Vector3 playerPosition;
     Vector3 fanPosition;
     Vector3 pushVector;
 
@@ -21,9 +21,9 @@ public class FanPush : MonoBehaviour
         fan = this.gameObject;
 
 
-        playerPosition = hat.transform.position;
-        fanPosition = fan.transform.position;
-        pushVector = playerPosition - fanPosition;
+        //  playerPosition = hat.transform.position;
+        //  fanPosition = fan.transform.position;
+        pushVector = Vector2.down;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

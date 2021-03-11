@@ -11,18 +11,18 @@ public class CollToggle : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.toggleGameMode += ToggleColldiers;
+        ModeManager.toggleGameMode += ToggleColldiers;
     }
 
     private void OnDisable()
     {
-        GameManager.toggleGameMode -= ToggleColldiers;
+        ModeManager.toggleGameMode -= ToggleColldiers;
     }
 
     [Button]
     void ToggleColldiers(GameMode gameMode)
     {
-        pushColl.enabled = !dragColl.enabled;
-        dragColl.enabled = !pushColl.enabled;
+        pushColl.enabled = !pushColl.enabled;
+        dragColl.enabled = !dragColl.enabled;
     }
 }
