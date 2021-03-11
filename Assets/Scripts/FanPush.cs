@@ -9,7 +9,7 @@ public class FanPush : MonoBehaviour
     [SerializeField] float fanStrength = 10.0f;
     private GameObject hat;
     private GameObject fan;
-
+    
    
    // Vector3 playerPosition;
     Vector3 fanPosition;
