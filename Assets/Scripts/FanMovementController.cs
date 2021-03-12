@@ -11,6 +11,9 @@ public class FanMovementController : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (ModeManager.gameMode == GameMode.playMode)
+            return;
+
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position -
@@ -20,6 +23,9 @@ public class FanMovementController : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (ModeManager.gameMode == GameMode.playMode)
+            return;
+
         Vector2 curScreenPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
         Vector2 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;

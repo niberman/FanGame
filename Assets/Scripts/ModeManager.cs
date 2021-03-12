@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 public class ModeManager : MonoBehaviour
 {
     
-    private GameMode gameMode = GameMode.editMode;
+    public static GameMode gameMode = GameMode.editMode;
     public static event Action<GameMode> toggleGameMode;
     //action creates a delegate, and an instance of a delegate
     //a delegate is a variable that you can assign function(s) to
@@ -18,8 +18,12 @@ public class ModeManager : MonoBehaviour
     {
         if (toggleGameMode != null)
         {
+            if (gameMode == GameMode.editMode)
+                gameMode = GameMode.playMode;
+            else
+                gameMode = GameMode.editMode;
+
             toggleGameMode.Invoke(gameMode);
-            
         }
 
     }

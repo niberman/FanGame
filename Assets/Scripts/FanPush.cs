@@ -23,11 +23,12 @@ public class FanPush : MonoBehaviour
 
         //  playerPosition = hat.transform.position;
         //  fanPosition = fan.transform.position;
-        pushVector = Vector2.down;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        pushVector = this.transform.right;
+
 
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb == null)
