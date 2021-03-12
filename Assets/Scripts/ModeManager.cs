@@ -17,7 +17,11 @@ public class ModeManager : MonoBehaviour
     private void ToggleGameMode()
     {
         if (toggleGameMode != null)
+        {
             toggleGameMode.Invoke(gameMode);
+            
+        }
+
     }
 }
 

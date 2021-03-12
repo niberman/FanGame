@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 public class CollToggle : MonoBehaviour
 {
     
-    [SerializeField] BoxCollider2D dragColl;
+    [SerializeField] CircleCollider2D dragColl;
     [SerializeField] BoxCollider2D pushColl;
 
     private void OnEnable()

@@ -206,7 +206,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &718617314
+--- !u!1001 &584031525
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -217,17 +217,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3741641964867011458, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5966280370742126082, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 5966280370742126082, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.06
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5966280370742126082, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_LocalPosition.z
@@ -251,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966280370742126082, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5966280370742126082, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -268,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 7754264305039120879, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
       propertyPath: m_Name
       value: MainFan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811237585011705305, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51971da6ff5b44269a982c80474ac882, type: 3}
@@ -654,7 +654,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -723,5 +723,5 @@ Transform:
   m_LocalScale: {x: 0.14315102, y: 0.14315102, z: 0.14315102}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
