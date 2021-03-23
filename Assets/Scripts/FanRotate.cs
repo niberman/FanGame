@@ -9,13 +9,10 @@ public class FanRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.T))
-            transform.Rotate(Vector3.forward * 90 * Time.deltaTime);
-        
+            transform.Rotate(0, 0, -90);
+
         if (Input.GetKeyDown(KeyCode.R))
-            transform.Rotate(Vector3.back * 90 * Time.deltaTime);
-        
+            transform.Rotate(0, 0, 90);
     }
 }
-

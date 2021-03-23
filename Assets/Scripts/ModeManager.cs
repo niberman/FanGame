@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 
 public class ModeManager : MonoBehaviour
 {
-    
+    [ShowInInspector]
     public static GameMode gameMode = GameMode.editMode;
     public static event Action<GameMode> toggleGameMode;
     //action creates a delegate, and an instance of a delegate
