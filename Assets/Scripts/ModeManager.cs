@@ -12,7 +12,6 @@ public class ModeManager : MonoBehaviour
     //action creates a delegate, and an instance of a delegate
     //a delegate is a variable that you can assign function(s) to
 
-
     [Button]
     private void ToggleGameMode()
     {

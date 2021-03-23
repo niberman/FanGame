@@ -11,10 +11,10 @@ public class FanRotate : MonoBehaviour
     {
         
         if (Input.GetKeyDown(KeyCode.T))
-            transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.forward * 90 * Time.deltaTime);
         
         if (Input.GetKeyDown(KeyCode.R))
-            transform.Rotate(Vector3.back * rotateSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.back * 90 * Time.deltaTime);
         
     }
 }
