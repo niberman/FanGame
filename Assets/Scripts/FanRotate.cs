@@ -10,9 +10,9 @@ public class FanRotate : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
-            transform.Rotate(0, 0, -90);
+            transform.Rotate(0, 0, -45);
 
         if (Input.GetKeyDown(KeyCode.R))
-            transform.Rotate(0, 0, 90);
+            transform.Rotate(0, 0, 45);
     }
 }

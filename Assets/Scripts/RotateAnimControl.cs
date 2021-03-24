@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RotateAnimControl : MonoBehaviour
 {
-    public float rotateSpeed = 10.0f;
-
-    private void FixedUpdate()
+    public float rotateSpeed;
+    private void Update()
     {
-        if(ModeManager.gameMode = GameMode.playMode)
-            transform.Rotate(Vector3.forward * -rotateSpeed);
+        if(ModeManager.gameMode == GameMode.playMode)
+            transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
     }
 }
