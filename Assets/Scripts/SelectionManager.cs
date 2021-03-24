@@ -5,7 +5,6 @@ using Sirenix.OdinInspector;
 
 public class SelectionManager : MonoBehaviour
 {
-
     [ShowInInspector]
     public static Selectable selectedObject;
 

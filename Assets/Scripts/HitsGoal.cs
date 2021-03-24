@@ -9,7 +9,7 @@ public class HitsGoal : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Object.Destroy(collision.gameObject);
-            Debug.Log("Hat hit goal!");
+            Debug.Log("hit goal!");
         }
     }
 }

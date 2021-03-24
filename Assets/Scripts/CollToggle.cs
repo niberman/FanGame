@@ -4,8 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 public class CollToggle : MonoBehaviour
-{
-    
+{  
     [SerializeField] CircleCollider2D dragColl;
     [SerializeField] BoxCollider2D pushColl;
 

@@ -5,8 +5,6 @@ using UnityEngine;
 public class FanRotate : MonoBehaviour
 {
     GameObject rotatingFan;
-    public float rotateSpeed;
-
 
     // Update is called once per frame
     void Update()
@@ -19,7 +17,5 @@ public class FanRotate : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             transform.Rotate(0, 0, 45);
-
-
     }
 }
