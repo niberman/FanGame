@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 6623622065141769847}
   - component: {fileID: 2988830218502914793}
   - component: {fileID: 1570657556}
+  - component: {fileID: 1900538218198648880}
   m_Layer: 0
   m_Name: MainFan
   m_TagString: Untagged
@@ -310,3 +311,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 7.3199997
+--- !u!114 &1900538218198648880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754264305039120879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af396bb7a668341058cfaa829ae0cb93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
