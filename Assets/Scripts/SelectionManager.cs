@@ -15,7 +15,7 @@ public class SelectionManager : MonoBehaviour
 
         if (hit.collider != null && hit.transform.GetComponent<Selectable>())
         {
-            Debug.Log("success");
+            //Debug.Log("success");
             return hit.transform.GetComponent<Selectable>();
         }
         return null;
