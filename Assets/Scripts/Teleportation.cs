@@ -5,17 +5,30 @@ using UnityEngine;
 public class Teleportation : MonoBehaviour
 {
     public GameObject portal;
-    public GameObject player;
+    private GameObject player;
+    private bool canPortal = true;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
-            StartCoroutine(Teleport());
+        if (other.gameObject.tag == "Player" && canPortal == true)
+            portal.GetComponent<Teleportation>().StartCooldown();
+        player.GetComponent<Rigidbody2D>().position = portal.transform.position;
     }
 
-    IEnumerator Teleport()
+    void Start()
     {
-        yield return new WaitForSeconds(0.25f);
-        player.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(1.0f);
+        canPortal = true;
+    }
+
+    public void StartCooldown()
+    {
+        canPortal = false;
+        StartCoroutine(Cooldown());
     }
 }
