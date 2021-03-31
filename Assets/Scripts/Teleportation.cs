@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class Teleportation : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class Teleportation : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && canPortal == true)
+        {
             portal.GetComponent<Teleportation>().StartCooldown();
-        player.GetComponent<Rigidbody2D>().position = portal.transform.position;
+            player.GetComponent<Rigidbody2D>().position = portal.transform.position;
+        }
     }
 
     void Start()
@@ -22,7 +25,7 @@ public class Teleportation : MonoBehaviour
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.25f);
         canPortal = true;
     }
 

@@ -8,9 +8,8 @@ public class FanPush : MonoBehaviour
     private float fanStrength = 75.0f;
     private GameObject money;
     private GameObject fan;
-    
-   
-   // Vector3 playerPosition;
+
+    // Vector3 playerPosition;
     Vector3 fanPosition;
     Vector3 pushVector;
 
@@ -31,8 +30,8 @@ public class FanPush : MonoBehaviour
     }
 }
 
-    
-    
+
+
 
 
 

@@ -12,10 +12,10 @@ public class FanRotate : MonoBehaviour
         if (SelectionManager.selectedObject != null && SelectionManager.selectedObject.gameObject != this.gameObject)
             return;
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) && GameManager.gameMode == GameMode.editMode)
             transform.Rotate(0, 0, -45);
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && GameManager.gameMode == GameMode.editMode)
             transform.Rotate(0, 0, 45);
     }
 }

@@ -12,8 +12,14 @@ public class GameManager : MonoBehaviour
     //action creates a delegate, and an instance of a delegate
     //a delegate is a variable that you can assign function(s) to
 
-    public GameObject portalPrefab;
-    public GameObject fanPrefab;
+    private GameObject portalPrefab;
+    private GameObject fanPrefab;
+
+    void Start()
+    {
+        fanPrefab = GameObject.FindObjectOfType<FanType>();
+        portalPrefab = GameObject.FindObjectOfType<PortalType>();
+    }
 
     private void Update()
     {
@@ -22,16 +28,16 @@ public class GameManager : MonoBehaviour
             Instantiate(fanPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
-        //if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
-        //{
-        //    Instantiate(portalPrefab, new Vector2(3, 3, 0), Quaternion.identity);
-        //}
+        if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
+        {
+            Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+        }
 
-        //if (Input.GetKeyDown(KeyCode.Backspace) && GameManager.gameMode == GameMode.editMode)
-        //{
-        //    Destroy(FindObjectOfType<Selectable>());
-        //    Debug.Log("backspace");
-        //}
+        if (Input.GetKeyDown(KeyCode.Backspace) && GameManager.gameMode == GameMode.editMode)
+        {
+            Destroy(GameObject.FindObjectOfType<Selectable>());
+            Debug.Log("backspace");
+        }
     }
 
     [Button]
