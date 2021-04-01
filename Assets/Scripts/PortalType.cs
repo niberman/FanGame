@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PortalType : MonoBehaviour
 {
-    enum{
+    public enum{
         PortalType
     }
 }

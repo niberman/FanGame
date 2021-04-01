@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FanType : MonoBehaviour
 {
-    enum{
+    public enum{
         FanType
     }
 }

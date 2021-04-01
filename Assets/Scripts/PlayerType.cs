@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerType : MonoBehaviour
 {
-    enum{
+    public enum{
         PlayerType
     }
 }
