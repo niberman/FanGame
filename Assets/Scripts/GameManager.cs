@@ -4,6 +4,12 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
+public enum GameMode
+{
+    editMode,
+    playMode
+}
+
 public class GameManager : MonoBehaviour
 {
     [ShowInInspector]
@@ -17,28 +23,33 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        fanPrefab = GameObject.FindObjectOfType<FanType>();
-        portalPrefab = GameObject.FindObjectOfType<PortalType>();
+        fanPrefab = GameObject.FindGameObjectWithTag("Fan");
+        portalPrefab = GameObject.FindGameObjectWithTag("Portal");
     }
-
     private void Update()
     {
+        //spawns fan on f
         if (Input.GetKeyDown(KeyCode.F) && GameManager.gameMode == GameMode.editMode)
         {
             Instantiate(fanPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
+        //spawns portal on a
         if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
         {
             Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
-        if (Input.GetKeyDown(KeyCode.Backspace) && GameManager.gameMode == GameMode.editMode)
-        {
-            Destroy(GameObject.FindObjectOfType<Selectable>());
-            Debug.Log("backspace");
-        }
+        //supposed to delete object from scene
+        //if (Input.GetKeyDown(KeyCode.Backspace) && GameManager.gameMode == GameMode.editMode)
+        //{
+        //    Destroy(GameObject.FindObjectOfType<Selectable>());
+
+        //    Debug.Log("backspace");
+        //}
     }
+
+
 
     [Button]
     private void ToggleGameMode()
@@ -52,13 +63,6 @@ public class GameManager : MonoBehaviour
 
             toggleGameMode.Invoke(gameMode);
         }
-
     }
 }
 
-
-public enum GameMode
-{
-    editMode,
-    playMode
-}
