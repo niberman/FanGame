@@ -18,13 +18,13 @@ public class GameManager : MonoBehaviour
     //action creates a delegate, and an instance of a delegate
     //a delegate is a variable that you can assign function(s) to
 
-    private GameObject portalPrefab;
-    private GameObject fanPrefab;
+    public GameObject portalPrefab;
+    public GameObject fanPrefab;
 
     void Start()
     {
-        fanPrefab = GameObject.FindGameObjectWithTag("Fan");
-        portalPrefab = GameObject.FindGameObjectWithTag("Portal");
+        //fanPrefab = GameObject.FindGameObjectWithTag("Fan");
+        //portalPrefab = GameObject.FindGameObjectWithTag("Portal");
     }
     private void Update()
     {
