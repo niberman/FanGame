@@ -11,20 +11,20 @@ public enum GameMode
 }
 
 public class GameManager : MonoBehaviour
-{
+{ 
+    //action creates a delegate, and an instance of a delegate
+    //a delegate is a variable that you can assign function(s) to
+   
     [ShowInInspector]
     public static GameMode gameMode = GameMode.editMode;
     public static event Action<GameMode> toggleGameMode;
-    //action creates a delegate, and an instance of a delegate
-    //a delegate is a variable that you can assign function(s) to
-
-    public GameObject portalPrefab;
-    public GameObject fanPrefab;
+    private GameObject portalPrefab;
+    private GameObject fanPrefab;
 
     void Start()
     {
-        //fanPrefab = GameObject.FindGameObjectWithTag("Fan");
-        //portalPrefab = GameObject.FindGameObjectWithTag("Portal");
+        fanPrefab = GameObject.FindGameObjectWithTag("Fan");
+        portalPrefab = GameObject.FindGameObjectWithTag("Portal");
     }
     private void Update()
     {
