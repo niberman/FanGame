@@ -38,7 +38,12 @@ public class GameManager : MonoBehaviour
             Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    ToggleGameMode();
+        //}
 
+        //if(Input.GetKeyDown())
     }
 
     [Button]
