@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject fanPrefab;
     public GameObject[] level;
     public int levelNumber;
+    public GameObject currentLevel;
 
     private void Update()
     {
@@ -37,15 +38,24 @@ public class GameManager : MonoBehaviour
             Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(level[levelNumber]);
 
-            Debug.Log(level[levelNumber]);
-        }
     }
 
+    [Button]
+    public void SwitchLevel()
+    {
 
+        if (currentLevel != null)
+        {
+            Destroy(currentLevel);
+        }
+
+        currentLevel = Instantiate(level[levelNumber]);
+        levelNumber++;
+
+        Debug.Log(level[levelNumber]);
+
+    }
 
     [Button]
     private void ToggleGameMode()

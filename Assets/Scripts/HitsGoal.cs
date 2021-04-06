@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class HitsGoal : MonoBehaviour
 {
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Object.Destroy(collision.gameObject);
             Debug.Log("hit goal!");
+            GameObject.FindObjectOfType<GameManager>().SwitchLevel();
+
         }
     }
 }
