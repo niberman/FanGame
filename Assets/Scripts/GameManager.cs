@@ -11,21 +11,18 @@ public enum GameMode
 }
 
 public class GameManager : MonoBehaviour
-{ 
+{
     //action creates a delegate, and an instance of a delegate
     //a delegate is a variable that you can assign function(s) to
-   
+
     [ShowInInspector]
     public static GameMode gameMode = GameMode.editMode;
     public static event Action<GameMode> toggleGameMode;
-    private GameObject portalPrefab;
-    private GameObject fanPrefab;
+    [SerializeField] GameObject portalPrefab;
+    [SerializeField] GameObject fanPrefab;
+    public GameObject[] level;
+    public int levelNumber;
 
-    void Start()
-    {
-        fanPrefab = GameObject.FindGameObjectWithTag("Fan");
-        portalPrefab = GameObject.FindGameObjectWithTag("Portal");
-    }
     private void Update()
     {
         //spawns fan on f
@@ -40,13 +37,12 @@ public class GameManager : MonoBehaviour
             Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
         }
 
-        //supposed to delete object from scene
-        //if (Input.GetKeyDown(KeyCode.Backspace) && GameManager.gameMode == GameMode.editMode)
-        //{
-        //    Destroy(GameObject.FindObjectOfType<Selectable>());
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(level[levelNumber]);
 
-        //    Debug.Log("backspace");
-        //}
+            Debug.Log(level[levelNumber]);
+        }
     }
 
 
