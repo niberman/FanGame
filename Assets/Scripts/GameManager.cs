@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
     public int levelNumber;
     public GameObject currentLevel;
 
+    void Start()
+    {
+        levelNumber = 0;
+        SwitchLevel();
+    }
+
     private void Update()
     {
         //spawns fan on f
@@ -36,6 +42,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
         {
             Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ToggleGameMode();
         }
 
         //if (Input.GetKeyDown(KeyCode.Space))
