@@ -23,11 +23,15 @@ public class GameManager : MonoBehaviour
     public GameObject[] level;
     public int levelNumber;
     public GameObject currentLevel;
+    private List<GameObject> _currentFans;
+    private List<GameObject> _currentPortals;
 
     void Start()
     {
         levelNumber = 0;
         SwitchLevel();
+
+
     }
 
     private void Update()
@@ -35,26 +39,21 @@ public class GameManager : MonoBehaviour
         //spawns fan on f
         if (Input.GetKeyDown(KeyCode.F) && GameManager.gameMode == GameMode.editMode)
         {
-            Instantiate(fanPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            GameObject fan = Instantiate(fanPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            _currentFans.Add(fan);
         }
 
         //spawns portal on a
         if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
         {
-            Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            GameObject portal = Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            _currentPortals.Add(portal);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ToggleGameMode();
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    ToggleGameMode();
-        //}
-
-        //if(Input.GetKeyDown())
     }
 
     [Button]
@@ -64,6 +63,17 @@ public class GameManager : MonoBehaviour
         if (currentLevel != null)
         {
             Destroy(currentLevel);
+            if (currentLevel != level[0])
+            {
+                foreach (var fan in _currentFans)
+                {
+                    Destroy(fan);
+                }
+                foreach (var portal in _currentPortals)
+                {
+                    Destroy(portal);
+                }
+            }
         }
 
         currentLevel = Instantiate(level[levelNumber]);
