@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
         levelNumber = 0;
         SwitchLevel();
 
-
     }
 
     private void Update()
