@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
             SwitchLevel();
         }
 
-        if (dollar == null)
-            dollar = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+        if (levelNumber != 0 && dollar == null)
+            dollar = GameObject.FindGameObjectWithTag("Player")?.GetComponent<SpriteRenderer>();
 
         if (dollar != null && !dollar.isVisible)
         {
@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
             levelNumber--;
             Destroy(currentLevel);
             currentLevel = Instantiate(level[levelNumber]);
+            gameMode = GameMode.editMode;
+            toggleGameMode?.Invoke(gameMode);
             levelNumber++;
         }
 
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
 
         }
         gameMode = GameMode.editMode;
-        //toggleGameMode.Invoke(gameMode);
+        toggleGameMode?.Invoke(gameMode);
         currentLevel = Instantiate(level[levelNumber]);
         levelNumber++;
 
