@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] level;
     public int levelNumber;
     public GameObject currentLevel;
-    private List<GameObject> _currentFans;
-    private List<GameObject> _currentPortals;
+    private List<GameObject> _currentFans = new List<GameObject>();
+    private List<GameObject> _currentPortals = new List<GameObject>();
 
     void Start()
     {
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && GameManager.gameMode == GameMode.editMode)
         {
             GameObject fan = Instantiate(fanPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            fan.transform.SetParent(currentLevel.transform);
             _currentFans.Add(fan);
         }
 
@@ -46,12 +47,18 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && GameManager.gameMode == GameMode.editMode)
         {
             GameObject portal = Instantiate(portalPrefab, new Vector3(3, 3, 0), Quaternion.identity);
+            portal.transform.SetParent(currentLevel.transform);
             _currentPortals.Add(portal);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ToggleGameMode();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)) //only for debugging
+        {
+            SwitchLevel();
         }
     }
 
@@ -62,19 +69,10 @@ public class GameManager : MonoBehaviour
         if (currentLevel != null)
         {
             Destroy(currentLevel);
-            if (currentLevel != level[0])
-            {
-                foreach (var fan in _currentFans)
-                {
-                    Destroy(fan);
-                }
-                foreach (var portal in _currentPortals)
-                {
-                    Destroy(portal);
-                }
-            }
-        }
 
+        }
+        gameMode = GameMode.editMode;
+        //toggleGameMode.Invoke(gameMode);
         currentLevel = Instantiate(level[levelNumber]);
         levelNumber++;
 
