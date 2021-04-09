@@ -25,16 +25,19 @@ public class GameManager : MonoBehaviour
     public GameObject currentLevel;
     private List<GameObject> _currentFans = new List<GameObject>();
     private List<GameObject> _currentPortals = new List<GameObject>();
+    public SpriteRenderer dollar;
+
 
     void Start()
     {
         levelNumber = 0;
         SwitchLevel();
-
     }
 
     private void Update()
     {
+        //currentLevel = level[levelNumber];
+
         //spawns fan on f
         if (Input.GetKeyDown(KeyCode.F) && GameManager.gameMode == GameMode.editMode)
         {
@@ -60,6 +63,27 @@ public class GameManager : MonoBehaviour
         {
             SwitchLevel();
         }
+
+        if (dollar == null)
+            dollar = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+
+        if (dollar != null && !dollar.isVisible)
+        {
+            RestartLevel();
+        }
+    }
+
+    [Button]
+    public void RestartLevel()
+    {
+        if (currentLevel != null)
+        {
+            levelNumber--;
+            Destroy(currentLevel);
+            currentLevel = Instantiate(level[levelNumber]);
+            levelNumber++;
+        }
+
     }
 
     [Button]
